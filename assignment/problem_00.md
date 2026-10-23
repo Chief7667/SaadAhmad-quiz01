@@ -5,7 +5,6 @@ Edit this file to solve problem 00. Problem 00 will not be auto-graded.
 This question is most aligned to our fourth class, where we discussed basic ML best practices applied at different stages of the ML lifecycle.
 
 ## Problem 00 - Part A
-
 When designing test cases for ML algorithms, care must be taken to avoid training cases leaking into test cases in unexpected ways. Select the choice which provides the safest way to split training and test data for a problem where objects must be detected in a video stream.
 
 Indicate your choice below the options.
@@ -18,9 +17,12 @@ C. Be sure to train and test on completely separate videos, taking care to ensur
 
 D. Split the data randomly and apply random transformations and augmentations. The specific types of transformations and the order they are applied in are not important. It is most important to ensure that the widest possible variety of transforms are applied.
 
-Your choice (2.5 points): [your choice here]
+Your choice (2.5 points): C
 
-Explain why you chose the answer in 1-2 sentences (2.5 points): [your text here]
+Explain why you chose the answer in 1-2 sentences (2.5 points): 
+I chose C because we want to make sure we train and test on completely seperate videos, and review them to make sure that there's no overlap so we can test our model properly. 
+B also separates videos but skips robustness testing and doesn’t guard against overlapping scenes.
+ 
 
 ## Problem 00 - Part B
 
@@ -34,6 +36,8 @@ C. Train the models in PyTorch, use pytest for unit tests with the highest pract
 
 D. Train the models in a custom C++ framework. Ensure the code has the highest unit test practical coverage. Save the models to ONNX files. After training runs for production are complete, load the ONNX files directly into Captum and run Integrated Gradients, since ONNX preserves the PyTorch automatic differentiation graph.
 
-Your choice (2.5 points): [your choice here]
+Your choice (2.5 points): C
 
-Explain why you chose the answer in 1-2 sentences (2.5 points): [your text here]
+Explain why you chose the answer in 1-2 sentences (2.5 points): 
+I chose C because PyTorch, pytest, and Captum are the right tools for training, testing & deploying..
+Captum is used during development & final models with multiple algorithms to  builds confidence so the results can guide training and tuning.
